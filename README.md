@@ -7,15 +7,18 @@
 ```
 
 ```clojure
-(ns profile.core
-    (:require
-     [developer.core :refer [info]]))
 
-(-> info (get :name))
-# "Rodolfo Mói de Oliveira"
+(ns profile.core
+  (:require
+   [clojure.string :as s]
+   [developer.core :as dev]))
+
+(-> dev/info (get :name) print)
 ; "Rodolfo Mói de Oliveira"
 
-(-> info (get :current-job))
-# {:company "Globoesporte" :period "2010-now" :role :developer}
-; {:company "Globoesporte" :period "2010-now" :role :developer}
+(-> dev/experience (get :current-job) print)
+; {:company "Globoesporte" :period {:begin 2018 :end nil} :role :developer}
+
+(->> dev/languages (map comp(keyword s/lower-case)) vec print)
+; [:javascript :css :html :clojure :clojurescript :r :python]
 ```
