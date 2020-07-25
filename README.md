@@ -16,10 +16,8 @@
 ; [:javascript :css :html :clojure :clojurescript :r :python]
 
 (-> dev/contact print)
-(comment "
-  {:linkedin "https://www.linkedin.com/in/rodmoi/"
-   :twitter "@rodmoi"}
-   ")
+; {:linkedin "https://www.linkedin.com/in/rodmoi/"
+;  :twitter "@rodmoi"}
 
 (-> dev/projects :personal (project [:name :link]) print)
 ; #{{:name "pokestore"
