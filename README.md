@@ -11,6 +11,8 @@
 (ns profile.core
   (:require
    [clojure.string :as s]
+   [clojure.set :refer [project]]
+
    [developer.core :as dev]))
 
 (-> dev/info (get :name) print)
@@ -21,4 +23,9 @@
 
 (->> dev/languages (map comp(keyword s/lower-case)) vec print)
 ; [:javascript :css :html :clojure :clojurescript :r :python]
+
+(-> dev/projects :personnal (project [:name :link]) print)
+; #{{:name "pokestore" :url "https://github.com/rodmoioliveira/pokestore"}
+;   {:name "football-graphs" :url "https://github.com/rodmoioliveira/football-graphs"}
+;   {:name "soccer-knockout-standings" :url "https://github.com/rodmoioliveira/soccer-knockout-standings"}}
 ```
