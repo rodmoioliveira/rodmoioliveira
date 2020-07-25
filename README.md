@@ -12,4 +12,9 @@
 >
 > [terminal] get name --verbose
 > Rodolfo Moi de Oliveira
+> info which
+> which -a
+> @root which
+@root which
+@root: which
 ```
