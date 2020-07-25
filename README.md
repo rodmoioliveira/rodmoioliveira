@@ -27,8 +27,8 @@
 ;   {:name "soccer-knockout-standings"
 ;    :url "https://github.com/rodmoioliveira/soccer-knockout-standings"}}
 
-(-> dev/projects :professional (project [:name :link]) vec (#(filter :proud? %)) print)
-; ({:name "Qual é o maior jogador brasileiro da história?"
+(-> dev/projects :professional (#(filter :proud? %)) (project [:name :link]) vec print)
+; [{:name "Qual é o maior jogador brasileiro da história?"
 ;   :url "https://interativos.globoesporte.globo.com/futebol/materia/melhor-jogador-brasileiro-oitavas"}
 ;  {:name "Maracanã 70 anos"
 ;   :url "https://interativos.globoesporte.globo.com/futebol/especial/maracana-70-anos"}
@@ -41,5 +41,5 @@
 ;  {:name "Rota dos Convocados"
 ;   :url "https://interativos.globoesporte.globo.com/futebol/copa-do-mundo/especial/rota-dos-convocados"}
 ;  {:name "Toda a bola é quadrada - A geometria das bolas das copas"
-;   :url "https://interativos.globoesporte.globo.com/futebol/copa-do-mundo/especial/toda-bola-e-quadrada"})
+;   :url "https://interativos.globoesporte.globo.com/futebol/copa-do-mundo/especial/toda-bola-e-quadrada"}]
 ```
