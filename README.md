@@ -36,4 +36,5 @@
 
 ```clj
 (-> developer (get :name))
+; Rodolfo Mói de Oliveira
 ```
