@@ -33,3 +33,7 @@
 @root: which
 > help
 ```
+
+```clj
+(-> developer (get :name))
+```
