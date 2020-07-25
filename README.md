@@ -1,5 +1,4 @@
 ```clojure
-
 (ns profile.core
   (:require
    [clojure.string :as s]
@@ -13,8 +12,12 @@
 (-> dev/experience (get :current-job) print)
 ; {:company "Globoesporte" :period {:begin 2018 :end nil} :role :developer}
 
-(->> dev/languages (map comp(keyword s/lower-case)) vec print)
+(->> dev/languages (map (comp keyword s/lower-case)) vec print)
 ; [:javascript :css :html :clojure :clojurescript :r :python]
+
+(-> dev/contact print)
+; {:linkedin "https://www.linkedin.com/in/rodmoi/"
+;  :twitter "@rodmoi"}
 
 (-> dev/projects :personnal (project [:name :link]) print)
 ; #{{:name "pokestore"
@@ -24,7 +27,7 @@
 ;   {:name "soccer-knockout-standings"
 ;    :url "https://github.com/rodmoioliveira/soccer-knockout-standings"}}
 
-(-> dev/projects :professional (project [:name :link]) vec (#(filter :proud?)) print)
+(-> dev/projects :professional (project [:name :link]) vec (#(filter :proud? %)) print)
 ; ({:name "Qual é o maior jogador brasileiro da história?"
 ;   :url "https://interativos.globoesporte.globo.com/futebol/materia/melhor-jogador-brasileiro-oitavas"
 ;   :company "Globoesporte"}
