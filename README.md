@@ -19,7 +19,7 @@
 ; {:linkedin "https://www.linkedin.com/in/rodmoi/"
 ;  :twitter "@rodmoi"}
 
-(-> dev/projects :personnal (project [:name :link]) print)
+(-> dev/projects :personal (project [:name :link]) print)
 ; #{{:name "pokestore"
 ;    :url "https://github.com/rodmoioliveira/pokestore"}
 ;   {:name "football-graphs"
